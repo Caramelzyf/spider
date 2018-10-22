@@ -1,0 +1,22 @@
+
+
+{% block content %}
+<div>
+    {% if error %}
+        <h2>没有相关文章题目</h2>
+    {% else %}
+    {% for post in post_list %}
+        <section>
+            <header>
+                <h2><a href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>
+
+                    <p>
+                        Time:  <a href="#">{{ post.date_time |date:"Y /m /d"}}</a> 
+                        <a href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>
+                    </p>
+            </header>
+        </section>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

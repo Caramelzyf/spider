@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> CSE- WHU  Events Information</title>
+  </head>
+
+  <body>
+    <h1>
+      Events Information
+    </h1>
+    <form action="/search/" method="get">
+      {% csrf_token %}
+        <input type="search" placeholder="请输入关键字" name= "q" required>
+        <button type="submit">搜索</button>
+    </form>
+
+    <h2>
+           title:{{title}}
+           time:{{time}}
+           text:{{text}}
+    </h2>
+  </body>
+</html>
+
+
